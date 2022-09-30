@@ -53,9 +53,8 @@ const AuthForm = ({ navigation }) => {
                 </View >
                 <TouchableOpacity
                     style={styles.button}
-                    onPress={onPress}
-                >
-                    <Text style={styles.text}>Submit</Text>
+                    onPress={onPress}>
+                    <Text style={[styles.text, styles.button_text]}>Submit</Text>
                 </TouchableOpacity>
                 {errorLogin && <Text style={styles.erorr}>Ошибка, не правельные имя пользователя или пароль</Text>}
 
@@ -83,8 +82,6 @@ const mobil = {
         color: '#27569C',
         lineHeight: 45,
         marginTop: 3,
-        textAlign: 'center'
-
     },
     text: {
         fontFamily: 'inter-bold',
@@ -110,6 +107,10 @@ const mobil = {
         marginTop: 22,
         marginBottom: 32,
     },
+    button_text: {
+        marginRight: 'auto',
+        marginLeft: 'auto',
+    },
     block_login: {
     },
     block_password: {
@@ -118,7 +119,7 @@ const mobil = {
         fontFamily: 'inter-bold',
         fontSize: 24,
         color: 'red',
-        textAlign: 'center'
+        textAlign: 'center',
     }
 };
 

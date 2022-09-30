@@ -20,7 +20,6 @@ export default function Header() {
         if (!user) {
             navigation.navigate('Main')
         }
-
     }, [user])
 
     useEffect(() => {

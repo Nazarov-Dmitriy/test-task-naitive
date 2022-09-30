@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import { createStyles, minWidth } from 'react-native-media-queries';
 import ListItems from './ListItems';
 import Loader from '../Loader';
@@ -82,9 +82,11 @@ export default function List() {
                 <>
                     <Header />
                     <View onLayout={styles.onLayout()} style={styles.container}>
-                        {successUsers && successPosts && successPhoto && data.map(item => {
-                            return <ListItems key={item.id} item={item} />
-                        })}
+                        <ScrollView>
+                            {successUsers && successPosts && successPhoto && data.map(item => {
+                                return <ListItems key={item.id} item={item} />
+                            })}
+                        </ScrollView>
                     </View>
                 </>}
 
@@ -96,7 +98,6 @@ const mobil = {
     container: {
         display: 'flex',
         alignItems: 'center',
-        flexWrap: "wrap",
     }
 };
 
